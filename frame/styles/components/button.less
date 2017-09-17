@@ -1,0 +1,100 @@
+@import '../commons/variables.less';
+
+.btn-variant(){
+  text-align: center;
+  position: relative;
+  border: none;
+  pointer-events: auto;
+  outline: none;
+  border: 1px solid;
+  box-sizing: border-box;
+}
+
+.btn-full-variant(){
+  width: @btn-full-width;
+  font-size: @btn-full-fs;
+  height: @btn-full-height;
+  margin-top: @btn-full-mt;
+  border-radius: @btn-full-radius;
+  text-align: center;
+  padding: 0px;
+  box-sizing: border-box;
+}
+.border-bg(@color, @bgColor, @borderColor) {
+  color: @color;
+  background-color: @bgColor;
+  border-color: @borderColor
+}
+
+
+.btn{
+  .btn-variant();
+  .border-bg(@btn-def-c, @btn-def-bg, @btn-def-bc);
+  height: @btn-height;
+  font-size: @btn-fontsize;
+  display: inline-block;
+  padding: 0 .2rem;
+  box-sizing: content-box;
+  border-radius: @btn-radius;
+
+  &:active{
+    .border-bg(@btn-def-c, @btn-def-bg-active, @btn-def-bc);
+  }
+
+  &.primary{
+    .border-bg(@btn-primary-c, @btn-primary-bg, @btn-primary-bc);
+    &:active{
+      .border-bg(@btn-primary-c, @btn-primary-bg-active, @btn-primary-bg-active);
+    }
+
+    &.outline{
+      .border-bg(@btn-primary-bg, transparent, @btn-primary-bg);
+      &:active{
+        .border-bg(@white, @btn-primary-bg, @btn-primary-bg);
+      }
+    }
+  }
+
+  &.waring{
+    .border-bg(@btn-waring-c, @btn-waring-bg, @btn-waring-bc);
+    &:active{
+      .border-bg(@btn-waring-c, @btn-waring-bg-active, @btn-waring-bg-active);
+    }
+
+    &.outline{
+      .border-bg(@btn-waring-bg, transparent, @btn-waring-bg);
+      &:active{
+        .border-bg(@white, @btn-waring-bg, @btn-waring-bg);
+      }
+    }
+  }
+
+  &.danger{
+    .border-bg(@btn-danger-c, @btn-danger-bg, @btn-danger-bc);
+    &:active{
+      .border-bg(@btn-danger-c, @btn-danger-bg-active, @btn-danger-bg-active);
+    }
+
+    &.outline{
+      .border-bg(@btn-danger-bg, transparent, @btn-danger-bg);
+      &:active{
+        .border-bg(@white, @btn-danger-bg, @btn-danger-bg);
+      }
+    }
+  }
+
+  &[disabled]{
+    .border-bg(@btn-disabled-c, @btn-disabled-bg, @btn-disabled-bc);
+    &:active{
+      .border-bg(@btn-disabled-c, @btn-disabled-bg-active, @btn-disabled-bg-active);
+    }
+  }
+
+  &.full{
+    .btn-full-variant();
+  }
+
+  &.circle{
+    border-radius: 200px;
+  }
+}
