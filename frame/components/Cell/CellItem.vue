@@ -47,7 +47,7 @@
 
 <script>
 export default{
-  name: 'Cell',
+  name: 'CellItem',
 
   props: {
     type: {
@@ -76,9 +76,13 @@ export default{
   computed: {
     checkLeft() {
       return !!this.$slots.left || !!this.$slots.icon;
+    },
+    classes() {
+      return this.arrow ? 'cell-arrow' : '';
     }
   }
 }
 </script>
-<style scoped>
+<style lang="less">
+  @import '../../styles/components/cell.less';
 </style>

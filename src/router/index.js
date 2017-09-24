@@ -1,8 +1,9 @@
-import Vue from 'vue'
-import Router from 'vue-router'
-import button from '../pages/button'
+import Vue from 'vue';
+import Router from 'vue-router';
+import button from '../pages/button';
+import cell from '../pages/cell';
 
-Vue.use(Router)
+Vue.use(Router);
 
 export default new Router({
   routes: [
@@ -10,6 +11,11 @@ export default new Router({
       path: '/button',
       name: 'button',
       component: button
+    },
+    {
+      path: '/cell',
+      name: 'cell',
+      component: cell
     }
   ]
-})
+});

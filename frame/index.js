@@ -1,10 +1,15 @@
 /**
  * Created by xwj on 2017/9/14.
  */
-import { Button } from './components/Button'
+import './styles/base.less';
+import { Button } from './components/Button';
+import Icon from './components/Icon';
+import { CellGroup, CellItem } from './components/Cell';
 
 const views = {
-  Button
+  Button,
+  Icon,
+  CellGroup, CellItem
 }
 
 const install = function (Vue, opts = {}) {
