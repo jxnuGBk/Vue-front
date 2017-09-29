@@ -1,99 +1,69 @@
 <template>
   <div style="background-color: #f5f5f5">
-    <!--<div class="cell-box">
-      <div class="cell">
-        <div class="cell-item">
-          <div class="cell-left">配送方式</div>
-          <div class="cell-right">顺丰快递</div>
-        </div>
-        <label class="cell-item">
-          <div class="cell-left">配送方式</div>
-          <div class="cell-right">顺丰快递</div>
-        </label>
 
-        <a class="cell-item">
-          <div class="cell-left">
-            <span class="cell-icon">
-              <Icon name="icon-home" size=".42rem"/>
-            </span>
-            配送方式
-          </div>
-          <div class="cell-right cell-arrow">
-            顺丰快递
-            <span class="cell-icon">
-              <Icon name="icon-cart" />
-            </span>
-          </div>
-        </a>
-
-        <a class="cell-item">
-          <div class="cell-left">
-            <span class="cell-icon">
-              <img src="http://static.ydcss.com/ydui/img/logo.png">
-            </span>
-            用户名：
-          </div>
-          <div class="cell-right cell-arrow">
-            <input type="text" />
-          </div>
-        </a>
-
-        <label class="cell-item">
-          <div class="cell-left">选择1</div>
-          <label class="cell-right">
-            <input slot="right" type="radio" value="1" v-model="model1"/>
-            <i class="cell-radio-icon"/>
-          </label>
-        </label>
-        <label class="cell-item">
-          <div class="cell-left">选择2</div>
-          <label class="cell-right">
-            <input slot="right" type="radio" value="2" v-model="model1"/>
-            <i class="cell-radio-icon"/>
-          </label>
-        </label>
-
-        <label class="cell-item">
-          <div class="cell-left">选择</div>
-          <label class="cell-right">
-            <input slot="right" type="checkbox" value="Han MeiMei" v-model="model2"/>
-            <i class="cell-checkbox-icon"/>
-          </label>
-        </label>
-      </div>
-    </div>-->
-
-    <cell-group title="title">
-      <cell-item arrow>
+    <j-cell-group title="title">
+      <j-cell-item arrow>
         <span slot="left">
-          <Icon name="icon-people" slot="icon" size=".42rem"/>
+          <j-icon name="j-icon-people" slot="j-icon" size=".42rem"/>
           用户
         </span>
         <span slot="right">xwj</span>
-      </cell-item>
-      <cell-item type="radio" >
+      </j-cell-item>
+      <j-cell-item type="radio" >
         <span slot="left">
            选项1
         </span>
         <input type="radio" slot="right" value="1" v-model="model1" />
-      </cell-item>
-      <cell-item type="radio" >
+      </j-cell-item>
+      <j-cell-item type="radio" >
         <span slot="left">
            选项2
         </span>
         <input type="radio" slot="right" value="2" v-model="model1" />
-      </cell-item>
-    </cell-group>
+      </j-cell-item>
+    </j-cell-group>
 
-    <cell-group title="输入">
-      <cell-item>
+    <j-cell-group title="输入">
+      <j-cell-item>
         <span slot="left">
-          <Icon name="icon-people" slot="icon" size=".42rem"/>
+          <j-icon name="j-icon-people" slot="j-icon" size=".42rem"/>
           用户信息：
         </span>
         <input type="text" slot="right" />
-      </cell-item>
-    </cell-group>
+      </j-cell-item>
+      <j-cell-item>
+        <j-textarea slot="right" showCounter maxlength="10">
+
+        </j-textarea>
+      </j-cell-item>
+      <j-cell-item>
+        <span slot="left">
+          <j-icon name="j-icon-people" slot="j-icon" size=".42rem"/>
+          性别：
+        </span>
+        <select slot="right">
+          <option value="1">男</option>
+          <option value="0">女</option>
+        </select>
+      </j-cell-item>
+    </j-cell-group>
+
+    <j-cell-group title="多选">
+      <j-cell-item type="checkbox">
+        <span slot="left">多选一</span>
+        <input slot="right" type="checkbox" value="Han MeiMei" v-model="checkedNames"/>
+      </j-cell-item>
+
+      <j-cell-item type="checkbox">
+        <span slot="left">多选二</span>
+        <input slot="right" type="checkbox" value="Li Lei" v-model="checkedNames"/>
+      </j-cell-item>
+
+      <j-cell-item type="checkbox">
+        <span slot="left">多选三</span>
+        <input slot="right" type="checkbox" value="Jim Green" v-model="checkedNames"/>
+      </j-cell-item>
+    </j-cell-group>
   </div>
 </template>
 
@@ -104,7 +74,8 @@ export default{
   data(){
     return {
       model1: '1',
-      model2: ''
+      model2: '',
+      checkedNames: []
     }
   }
 }

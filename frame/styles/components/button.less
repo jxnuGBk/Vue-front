@@ -37,6 +37,10 @@
   box-sizing: content-box;
   border-radius: @btn-radius;
 
+  .iconfont,.icon{
+    vertical-align: middle;
+  }
+
   &:active{
     .border-bg(@btn-def-c, @btn-def-bg-active, @btn-def-bc);
   }
@@ -79,6 +83,20 @@
       .border-bg(@btn-danger-bg, transparent, @btn-danger-bg);
       &:active{
         .border-bg(@white, @btn-danger-bg, @btn-danger-bg);
+      }
+    }
+  }
+
+  &.success{
+    .border-bg(@btn-success-c, @btn-success-bg, @btn-success-bc);
+    &:active{
+      .border-bg(@btn-success-c, @btn-success-bg-active, @btn-success-bg-active);
+    }
+
+    &.outline{
+      .border-bg(@btn-success-bg, transparent, @btn-success-bg);
+      &:active{
+        .border-bg(@white, @btn-success-bg, @btn-success-bg);
       }
     }
   }

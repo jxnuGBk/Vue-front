@@ -1,0 +1,58 @@
+@import '../commons/variables.less';
+@import '../commons/mixins.less';
+
+.radio{
+  font-size: .3rem;
+  display: inline-block;
+  padding-right: 10px;
+
+  .radio-icon{
+    border: 1px solid #ccc;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    display: inline-block;
+    position: relative;
+    vertical-align: bottom;
+
+    &:after{
+      content:'';
+      background-color: currentColor;
+      border-radius: 50%;
+     .poscc(50%, 50%);
+      .tf(translate(-50%, -50%) scale(0));
+      transition: all .2s ease-in-out;
+    }
+  }
+
+  .radio-text{
+    margin-left: 1px;
+    color: #666;
+    pointer-events: none;
+  }
+
+  input[type=radio]{
+    position: absolute;
+    left: -9999em;
+
+    &:checked+.radio-icon{
+      border-color: currentColor;
+      color: @primary;
+      &:after{
+        .tf(translate(-50%, -50%) scale(1));
+      }
+    }
+
+    &:disabled +.radio-icon{
+      color: #CCC;
+      background-color: #F3F3F3;
+      & +.radio-text{
+        border-color: #CCC;
+      }
+
+      &:after{
+        border-color: #CCC;
+      }
+    }
+  }
+}

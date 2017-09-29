@@ -1,0 +1,47 @@
+@import "../commons/variables";
+@import "../commons/mixins.less";
+
+@prefixCls: badge;
+
+.@{prefixCls}{
+  display: inline-block;
+  position: relative;
+  line-height: 1;
+  vertical-align: middle;
+
+  .@{prefixCls}-count{
+    position: absolute;
+    top: -13px;
+    right: 0px;
+    border-radius: 10px;
+    min-width: 20px;
+    padding: 2px 6px;
+    font-size: 12px;
+    background-color: @danger;
+    color: @white;
+    text-align: center;
+    white-space: nowrap;
+    transform-origin: -10% center;
+    box-shadow: 0 0 0 1px #fff;
+    .tf(translateX(50%));
+  }
+  .@{prefixCls}-dot {
+    position: absolute;
+    transform-origin: 0 center;
+    box-shadow: 0 0 0 1px #fff;
+    top: -4px;
+    right: -8px;
+    width: 8px;
+    height: 8px;
+    border-radius: 100%;
+    background-color: @danger;
+    .tf(translateX(-50%));
+  }
+
+  .@{prefixCls}-alone {
+    top: auto;
+    display: block;
+    position: relative;
+    .tf(translateX(0));
+  }
+}

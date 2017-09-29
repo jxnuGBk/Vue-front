@@ -1,48 +1,30 @@
 <template>
   <div>
-    <!--
-    <button class="btn">13123</button>
-    <button class="btn primary">13123</button>
-    <button class="btn waring">13123</button>
-    <button class="btn danger">13123</button>
-    <button class="btn" disabled>13123</button>
+    <j-button @click="handleClick">default</j-button>
+    <j-button type="primary">primary</j-button>
+    <j-button type="waring">waring</j-button>
+    <j-button type="danger"><j-icon name="icon-location_light"/>danger</j-button>
+    <j-button type="success">waring</j-button>
     <br/>
-    <button class="btn outline">13123</button>
-    <button class="btn primary outline">13123</button>
-    <button class="btn waring outline">13123</button>
-    <button class="btn danger outline">13123</button>
-    <button class="btn outline" disabled>13123</button>
+    <j-button>default</j-button>
+    <j-button type="primary" outline> <j-icon name="icon-location_light"/>primary</j-button>
+    <j-button type="waring" outline>waring</j-button>
+    <j-button type="danger" outline>danger</j-button>
+    <j-button type="success" outline>waring</j-button>
     <br/>
-    <button class="btn full">1212</button>
-    <button class="btn full primary">1212</button>
-    <button class="btn full waring">1212</button>
-    <button class="btn full danger">1212</button>
-    <button class="btn full danger circle">1212</button>
+    <j-button>default</j-button>
+    <j-button type="primary" shape="circle">primary</j-button>
+    <j-button type="waring" shape="circle">waring</j-button>
+    <j-button type="danger" shape="circle">danger</j-button>
+    <j-button type="success" shape="circle">waring</j-button>
     <br/>
-    <button class="btn primary circle">13123</button>
-    -->
-    <Button @click="handleClick">default</Button>
-    <Button type="primary">primary</Button>
-    <Button type="waring">waring</Button>
-    <Button type="danger">danger</Button>
+    <j-button>default</j-button>
+    <j-button type="primary" size="large" shape="circle">primary</j-button>
+    <j-button type="waring" size="large" shape="circle">waring</j-button>
+    <j-button type="danger" size="large" shape="circle">danger</j-button>
+    <j-button disabled size="large" shape="circle">danger</j-button>
     <br/>
-    <Button>default</Button>
-    <Button type="primary" outline>primary</Button>
-    <Button type="waring" outline>waring</Button>
-    <Button type="danger" outline>danger</Button>
-    <br/>
-    <Button>default</Button>
-    <Button type="primary" shape="circle">primary</Button>
-    <Button type="waring" shape="circle">waring</Button>
-    <Button type="danger" shape="circle">danger</Button>
-    <br/>
-    <Button>default</Button>
-    <Button type="primary" size="large" shape="circle">primary</Button>
-    <Button type="waring" size="large" shape="circle">waring</Button>
-    <Button type="danger" size="large" shape="circle">danger</Button>
-    <Button disabled size="large" shape="circle">danger</Button>
-    <br/>
-    <Icon name="icon-location_light"/>
+
   </div>
 </template>
 

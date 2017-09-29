@@ -1,0 +1,50 @@
+@import '../commons/variables.less';
+@import '../commons/mixins.less';
+
+.switch{
+  z-index: 10;
+  position: relative;
+  width: 52px;
+  height: 32px;
+  left: 0px;
+  border: 1px solid #dfdfdf;
+  border-radius: 16px;
+  background-color: #dfdfdf;
+  -webkit-appearance: none;
+  vertical-align: middle;
+  color: @primary;
+
+
+  &:before, &:after {
+    content: '';
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    height: 30px;
+    border-radius: 15px;
+    transition:all .3s ease-in-out;
+  }
+
+  &:before {
+    width: 50px;
+    background-color: #fdfdfd;
+  }
+
+  &:after {
+    width: 30px;
+    background-color: #FFF;
+    box-shadow: 0 1px 3px rgba(0,0,0,.4);
+  }
+
+  &:checked {
+    border-color: currentColor;
+    background-color: currentColor;
+    &:before {
+      .tf(scale(0));
+    }
+
+    &:after{
+      .tf(translateX(20px));
+    }
+  }
+}

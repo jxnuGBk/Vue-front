@@ -18,3 +18,44 @@
   -webkit-transform-origin: 0 0;
   transform-origin: 0 0;
 }
+
+// ========绝对定位居中========
+.poscc(@width, @height){
+  position: absolute;
+  width: @width;
+  height: @height;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%,-50%);
+}
+
+.tf(@val) {
+  transform: @val;
+  -webkit-transform: @val;
+  -o-transform: @val;
+  -moz-transform: @val;
+}
+
+
+//============弹出层背景=========
+.mask(@bgColor: @mask-bg-color) {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: @mask-zIndex;
+  background-color: @bgColor;
+  transition: all .4s ease;
+  opacity: 0;
+  visibility: hidden;;
+}
+.mask-active{
+  opacity: 1;
+  visibility: visible;
+}
+
+.maskUp(@zIndex: 1502) {
+  position: fixed;
+  z-index: @zIndex;
+}

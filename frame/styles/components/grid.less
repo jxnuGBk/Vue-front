@@ -1,0 +1,84 @@
+@import '../commons/variables.less';
+@import '../commons/mixins.less';
+
+@row-prefix-cls: row;
+@col-prefix-cls: col;
+
+.generate-col(@sum, @span: 1) when (@span <= @sum) {
+  .@{col-prefix-cls}-span-@{span} {
+    display: block;
+    float: left;
+    width: percentage(@span/@sum) ;
+    flex: 0 0 auto;
+  }
+  .@{col-prefix-cls}-offset-@{span} {
+    margin-left: percentage(@span/@sum) ;
+  }
+  .generate-col(@sum, (@span + 1));
+}
+
+.@{row-prefix-cls} {
+  position: relative;
+  margin-left: 0px;
+  margin-right: 0px;
+  height:auto;
+  zoom: 1;
+  display: block;
+
+  &:before{
+    content: "";
+    display: table;
+  }
+
+  &:after{
+    content: "";
+    clear: both;
+    display: table;
+    visibility: hidden;
+    font-size: 0px;
+    height: 0px;
+  }
+}
+
+.@{row-prefix-cls}-flex{
+  display: flex;
+  &:before{
+    display: flex;
+  }
+  &:after{
+    display: flex;
+  }
+}
+.@{row-prefix-cls}-flex-start{
+  justify-content: flex-start;
+}
+.@{row-prefix-cls}-flex-center{
+  justify-content: center;
+}
+.@{row-prefix-cls}-flex-end{
+  justify-content: flex-end;
+}
+.@{row-prefix-cls}-space-around{
+  justify-content: space-around;
+}
+.@{row-prefix-cls}-space-between{
+  justify-content: space-between;
+}
+
+.@{row-prefix-cls}-flex-top{
+  align-items: flex-start;
+}
+.@{row-prefix-cls}-flex-bottom{
+  align-items: flex-end;
+}
+.@{row-prefix-cls}-flex-middle{
+  align-items: center;
+}
+
+
+.@{col-prefix-cls} {
+  position: relative;
+  display: block;
+}
+
+.generate-col(24);
