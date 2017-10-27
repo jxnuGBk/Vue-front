@@ -1,3 +1,17 @@
+.popup-mask{
+  .mask();
+
+  &.active{
+    .mask-active();
+  }
+}
+.popup-mask-enter{
+  animation: fadeIn .3s;
+}
+.popup-mask-leave{
+  animation: fadeOut .3s;
+}
+
 // 绝对定位居中
 .pos-cc{
   position: absolute;

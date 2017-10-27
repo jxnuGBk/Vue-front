@@ -1,5 +1,5 @@
 <template>
-    <div class="demo-div">
+    <j-layout>
       <j-button type="primary" outline @click="handleClick(1)" >点击弹出ActionSheet</j-button>
 
       <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
@@ -8,7 +8,7 @@
 
       <j-actionSheet v-model="model1" :data="data" :onClick="handleItemClick" @onCancel="handleCancel">
       </j-actionSheet>
-    </div>
+    </j-layout>
 </template>
 
 <script>

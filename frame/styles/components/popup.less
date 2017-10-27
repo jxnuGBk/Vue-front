@@ -1,0 +1,82 @@
+@import "../commons/variables";
+@import "../commons/mixins.less";
+
+@prefixCls: popup;
+
+.@{prefixCls}{
+  .maskUp();
+  transition: transform .3s;
+  display: flex;
+  background-color: #f7f7f7;
+
+  &.@{prefixCls}-show {
+  }
+  .@{prefixCls}-content{
+    flex: 1;
+    position: relative;
+    overflow-y: auto;
+  }
+
+  &.@{prefixCls}-bottom{
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    flex-direction: column;
+    .tf(translateY(100%));
+
+    &.@{prefixCls}-show {
+      .tf(translate(0));
+      pointer-events: auto;
+    }
+  }
+
+  &.@{prefixCls}-top{
+    left: 0;
+    top: 0;
+    width: 100%;
+    flex-direction: column;
+    .tf(translateY(-100%));
+
+    &.@{prefixCls}-show {
+      .tf(translateY(0%));
+      pointer-events: auto;
+    }
+  }
+
+  &.@{prefixCls}-left{
+    left: 0;
+    top: 0;
+    bottom: 0;
+    .tf(translateX(-100%));
+
+    &.@{prefixCls}-show {
+      .tf(translateX(0%));
+      pointer-events: auto;
+    }
+  }
+
+  &.@{prefixCls}-right{
+    right: 0;
+    top: 0;
+    bottom: 0;
+    .tf(translateX(100%));
+
+    &.@{prefixCls}-show {
+      .tf(translateX(0%));
+      pointer-events: auto;
+    }
+  }
+
+  &.@{prefixCls}-center{
+    left: 50%;
+    top: 50%;
+    max-height: 100%;
+    .tf(translate(-50%, -50%) scale(0));
+
+    &.@{prefixCls}-show {
+      .tf(translate(-50%, -50%) scale(1));
+      pointer-events: auto;
+    }
+  }
+}
+

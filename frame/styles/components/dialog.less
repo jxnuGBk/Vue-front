@@ -1,0 +1,108 @@
+@import "../commons/variables";
+@import "../commons/mixins.less";
+
+.modal{
+  width: 70%;
+  position: absolute;
+  left: 50%;
+  top: 35%;
+  background-color: @modal-bg;
+  text-align: center;
+  color: @modal-color;
+  border-radius: @modal-radius;
+  margin-left: -35%;
+
+  .modal-title {
+    padding-top: 10px;
+  }
+
+  &.modal-enter {
+     animation: modal-in .15s;
+  }
+
+  &.modal-leave {
+    animation: modal-out .15s;
+  }
+
+  .modal-inner{
+    padding: 15px;
+    position: relative;
+    .modal-text{
+      word-break: break-all;
+    }
+
+    &:after{
+      content: '';
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      height: 1px;
+      width: 100%;
+      background-color: @modal-line;
+      display: block;
+      transform-origin: 50% 100%;
+      .tf(scaleY(0.5));
+    }
+  }
+
+  .modal-bottom{
+    overflow: hidden;
+    display: flex;
+    height: 40px;
+    line-height: 40px;
+    color: @primary;
+
+    .modal-button{
+      flex: 1;
+      position: relative;
+
+      &+.modal-button{
+        &:before{
+          content: '';
+          position: absolute;
+          top: 0px;
+          left: 0px;
+          bottom: 0px;
+          width: 1px;
+          background-color: @modal-line;
+          .tf(scaleY(0.5));
+        }
+      }
+
+      &:first-child {
+        border-bottom-left-radius: @modal-radius;
+      }
+      &:last-child {
+        border-bottom-right-radius: @modal-radius;
+      }
+
+      &:active{
+        background-color: @modal-bg-active;
+      }
+    }
+  }
+}
+@keyframes modal-in {
+  from {
+    .tf(scale(1.185));
+    opacity: 0;
+  }
+
+  to {
+    .tf(scale(1));
+    opacity: 1;
+  }
+}
+
+@keyframes modal-out {
+  from {
+    .tf(scale(1));
+    opacity: 1;
+  }
+
+  to {
+    .tf(scale(.815));
+    opacity: 0;
+  }
+}

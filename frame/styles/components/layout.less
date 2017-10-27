@@ -1,0 +1,19 @@
+@import "../commons/variables";
+@import "../commons/mixins.less";
+
+@prefixCls: layout;
+
+.@{prefixCls}-page {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.@{prefixCls}-content {
+  flex: 1;
+  overflow-y: auto;
+  overflow-x: hidden;
+  position: relative;
+  margin-bottom: -1px;
+}
