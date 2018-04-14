@@ -1,6 +1,6 @@
 # vue2
 
-> A Vue.js project
+> mobile ui base on Vue
 
 ## Build Setup
 
